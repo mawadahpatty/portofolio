@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CV Interaktif Mawadah</title>
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+body {
+    background: linear-gradient(135deg, #e9eaed, #5c8bdc);
+    font-family: 'Segoe UI', sans-serif;
+    color: #fff;
+    text-align: center;
+}
+
+/* FOTO */
+.photo-frame {
+    background: #8dc7f9;
+    padding: 10px;
+    border-radius: 50%;
+    display: inline-block;
+}
+.photo-frame img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* MENU */
+.nav-card {
+    background: #d6dcff;
+    border-radius: 25px;
+    padding: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+    color: #000;
+}
+.nav-card:hover {
+    background: #7a8cdd;
+    color: white;
+    transform: translateY(-5px);
+}
+
+/* KONTEN */
+.content-box {
+    background: #8cceef;
+    border-radius: 25px;
+    padding: 25px;
+    margin-top: 20px;
+    color: #000;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container py-5">
+
+    <!-- FOTO -->
+    <div class="photo-frame mb-4">
+        <img src="foto.jpeg" alt="Foto">
+    </div>
+
+    <!-- MENU -->
+    <div class="row justify-content-center g-3">
+
+        <div class="col-6 col-md-2">
+            <div class="nav-card" onclick="showPage('status')">
+                <i class="fas fa-user-check"></i><br>Status
+            </div>
+        </div>
+
+        <div class="col-6 col-md-2">
+            <div class="nav-card" onclick="showPage('pengalaman')">
+                <i class="fas fa-briefcase"></i><br>Pengalaman
+            </div>
+        </div>
+
+        <div class="col-6 col-md-2">
+            <div class="nav-card" onclick="showPage('pendidikan')">
+                <i class="fas fa-graduation-cap"></i><br>Pendidikan
+            </div>
+        </div>
+
+        <div class="col-6 col-md-2">
+            <div class="nav-card" onclick="showPage('alamat')">
+                <i class="fas fa-home"></i><br>Alamat
+            </div>
+        </div>
+
+        <div class="col-6 col-md-2">
+            <div class="nav-card" onclick="showPage('skill')">
+                <i class="fas fa-code"></i><br>Skill
+            </div>
+        </div>
+
+    </div>
+
+    <!-- KONTEN -->
+    <div id="content" class="content-box mt-4">
+        <h4>✨ Selamat Datang ✨</h4>
+        <p>Klik menu untuk melihat biodata</p>
+    </div>
+
+</div>
+
+<script>
+
+function showPage(page) {
+
+    let content = "";
+
+    if(page === "status"){
+        content = `
+        <h4>Status Saat Ini</h4>
+        <p>Mahasiswa Aktif Semester 4</p>
+        <p>Universitas Pattimura - Ilmu Komputer</p>
+        `;
+    }
+
+    else if(page === "pengalaman"){
+        content = `
+        <h4>Pengalaman</h4>
+        <ul class="list-group text-start">
+            <li class="list-group-item">Pramuka</li>
+            <li class="list-group-item">OSIS</li>
+            <li class="list-group-item">PMR</li>
+            <li class="list-group-item">Juara 3 KSM Matematika 2024</li>
+        </ul>
+        `;
+    }
+
+    else if(page === "pendidikan"){
+        content = `
+        <h4>Pendidikan</h4>
+        <p><strong>Universitas Pattimura</strong> – Ilmu Komputer</p>
+        <p><strong>MA Uswatun Hasanah</strong></p>
+        `;
+    }
+
+    else if(page === "alamat"){
+        content = `
+        <h4>Alamat</h4>
+        <p>Lorong Gandaria</p>
+        <p>Negeri Rumah Tiga</p>
+        <p>Kecamatan Teluk Ambon</p>
+        <p>Ambon, Maluku</p>
+        `;
+    }
+
+    else if(page === "skill"){
+        content = `
+        <h4>Skill</h4>
+
+        <p>Komunikasi</p>
+        <div class="progress mb-2">
+            <div class="progress-bar bg-warning" style="width:90%"></div>
+        </div>
+
+        <p>Kerjasama Tim</p>
+        <div class="progress mb-2">
+            <div class="progress-bar bg-warning" style="width:85%"></div>
+        </div>
+
+        <p>Python Dasar</p>
+        <div class="progress">
+            <div class="progress-bar bg-warning" style="width:70%"></div>
+        </div>
+
+        <p>Microsoft Office</p>
+        <div class="progress">
+            <div class="progress-bar bg-warning" style="width:80%"></div>
+        </div>
+        `;
+    }
+
+    document.getElementById("content").innerHTML = content;
+}
+
+</script>
+
+</body>
+</html>

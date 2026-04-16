@@ -60,3 +60,171 @@ body {
 </head>
 
 <body>
+
+    <div class="container py-5">
+
+    <!-- FOTO -->
+    <div class="photo-frame mb-4">
+        <img src="foto.jpeg" alt="Foto">
+    </div>
+
+    <!-- MENU -->
+    <div class="row justify-content-center g-3">
+
+        <div class="col-6 col-md-2">
+            <div class="nav-card" onclick="showPage('status')">
+                <i class="fas fa-user-check"></i><br>Status
+            </div>
+        </div>
+
+        <div class="col-6 col-md-2">
+            <div class="nav-card" onclick="showPage('pengalaman')">
+                <i class="fas fa-briefcase"></i><br>Pengalaman
+            </div>
+        </div>
+
+        <div class="col-6 col-md-2">
+            <div class="nav-card" onclick="showPage('pendidikan')">
+                <i class="fas fa-graduation-cap"></i><br>Pendidikan
+            </div>
+        </div>
+
+        <div class="col-6 col-md-2">
+            <div class="nav-card" onclick="showPage('alamat')">
+                <i class="fas fa-home"></i><br>Alamat
+            </div>
+        </div>
+
+        <div class="col-6 col-md-2">
+            <div class="nav-card" onclick="showPage('skill')">
+                <i class="fas fa-code"></i><br>Skill
+            </div>
+        </div>
+
+        <!-- TOMBOL KONTAK -->
+        <div class="col-6 col-md-2">
+            <div class="nav-card" onclick="showPage('kontak')">
+                <i class="fas fa-address-book"></i><br>Kontak
+            </div>
+        </div>
+
+    </div>
+
+    <!-- KONTEN -->
+    <div id="content" class="content-box mt-4">
+        <h4>✨ Selamat Datang ✨</h4>
+        <p>Klik menu untuk melihat biodata</p>
+    </div>
+
+</div>
+
+<script>
+
+function showPage(page) {
+
+    let content = "";
+
+    if(page === "status"){
+        content = `
+        <h4>Status Saat Ini</h4>
+        <p>Mahasiswa Aktif Semester 4</p>
+        <p>Universitas Pattimura - Ilmu Komputer</p>
+        `;
+    }
+
+    else if(page === "pengalaman"){
+        content = `
+        <h4>Pengalaman</h4>
+        <ul class="list-group text-start">
+            <li class="list-group-item">Pramuka</li>
+            <li class="list-group-item">OSIS</li>
+            <li class="list-group-item">PMR</li>
+            <li class="list-group-item">Juara 3 KSM Matematika 2024</li>
+        </ul>
+        `;
+    }
+
+    else if(page === "pendidikan"){
+        content = `
+        <h4>Pendidikan</h4>
+        <p><strong>Universitas Pattimura</strong> – Ilmu Komputer</p>
+        <p><strong>MA Uswatun Hasanah</strong></p>
+        `;
+    }
+
+    else if(page === "alamat"){
+        content = `
+        <h4>Alamat</h4>
+        <p>Lorong Gandaria</p>
+        <p>Negeri Rumah Tiga</p>
+        <p>Kecamatan Teluk Ambon</p>
+        <p>Ambon, Maluku</p>
+        `;
+    }
+
+    else if(page === "skill"){
+        content = `
+        <h4>Skill</h4>
+
+        <p>Komunikasi</p>
+        <div class="progress mb-2">
+            <div class="progress-bar bg-warning" style="width:90%"></div>
+        </div>
+
+        <p>Kerjasama Tim</p>
+        <div class="progress mb-2">
+            <div class="progress-bar bg-warning" style="width:85%"></div>
+        </div>
+
+        <p>Python Dasar</p>
+        <div class="progress mb-2">
+            <div class="progress-bar bg-warning" style="width:70%"></div>
+        </div>
+
+        <p>Microsoft Office</p>
+        <div class="progress">
+            <div class="progress-bar bg-warning" style="width:80%"></div>
+        </div>
+        `;
+    }
+
+    else if(page === "kontak"){
+        content = `
+        <h4>Kontak Saya</h4>
+
+        <p>
+            <i class="fa-solid fa-envelope"></i> 
+            <a href="mailto:mawadahpatty@gmail.com">
+                mawadahpatty@gmail.com
+            </a>
+        </p>
+
+        <p>
+            <i class="fa-brands fa-instagram"></i> 
+            <a href="https://instagram.com/mawnd7_" target="_blank">
+                @mawnd7_
+            </a>
+        </p>
+
+        <p>
+            <a href="https://wa.me/6285243299721" target="_blank" class="btn btn-success">
+                <i class="fa-brands fa-whatsapp"></i> Chat WhatsApp
+            </a>
+        </p>
+
+        <p>
+            <i class="fab fa-github"></i>
+            <a href="https://github.com/mawadahpatty" target="_blank">
+                Github
+            </a>
+        </p>
+        `;
+    }
+
+    document.getElementById("content").innerHTML = content;
+}
+
+</script>
+
+</body>
+</html>
